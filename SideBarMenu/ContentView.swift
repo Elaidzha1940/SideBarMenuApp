@@ -10,6 +10,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedItem: TabIcon = .Home
+    @State var yOffset: CGFloat = 0
+    
     var body: some View {
         ZStack {
          Color("BG1")
@@ -17,7 +20,12 @@ struct ContentView: View {
                 .mask(RoundedRectangle(cornerRadius: 15, style: .continuous))
             
             VStack {
-                UserImage()
+                VStack {
+                    UserImage()
+                    
+                    TabView(selectedItem: $selectedItem, yOffset: $yOffset)
+                    
+                }
                 Spacer()
             }
         }
@@ -51,5 +59,26 @@ struct UserImage: View {
         }
         .foregroundStyle(.white)
         .padding(.top, 65)
+    }
+}
+
+struct TabView: View {
+    @Binding var selectedItem: TabIcon
+    @Binding var yOffset: CGFloat
+    @State var isAnimated: Bool = false
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .frame(
+                    width: isAnimated ? 20 : 230, height: 45)
+                .foregroundStyle(.BG)
+                .cornerRadius(5)
+                .offset(y: yOffset)
+            
+            VStack {
+                
+            }
+        }
     }
 }

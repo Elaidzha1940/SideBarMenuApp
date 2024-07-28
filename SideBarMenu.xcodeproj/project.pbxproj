@@ -14,6 +14,7 @@
 		E4A318432C5568A7005466F1 /* SideBarMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A318422C5568A7005466F1 /* SideBarMenuTests.swift */; };
 		E4A3184D2C5568A7005466F1 /* SideBarMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3184C2C5568A7005466F1 /* SideBarMenuUITests.swift */; };
 		E4A3184F2C5568A7005466F1 /* SideBarMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3184E2C5568A7005466F1 /* SideBarMenuUITestsLaunchTests.swift */; };
+		E4A3185C2C56B671005466F1 /* SBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3185B2C56B671005466F1 /* SBModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E4A318482C5568A7005466F1 /* SideBarMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideBarMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A3184C2C5568A7005466F1 /* SideBarMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuUITests.swift; sourceTree = "<group>"; };
 		E4A3184E2C5568A7005466F1 /* SideBarMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E4A3185B2C56B671005466F1 /* SBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				E4A318332C5568A6005466F1 /* ContentView.swift */,
 				E4A318352C5568A7005466F1 /* Assets.xcassets */,
 				E4A318372C5568A7005466F1 /* Preview Content */,
+				E4A3185B2C56B671005466F1 /* SBModel.swift */,
 			);
 			path = SideBarMenu;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				E4A318342C5568A6005466F1 /* ContentView.swift in Sources */,
 				E4A318322C5568A6005466F1 /* SideBarMenuApp.swift in Sources */,
+				E4A3185C2C56B671005466F1 /* SBModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
