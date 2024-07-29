@@ -22,9 +22,8 @@ struct ContentView: View {
             VStack {
                 VStack {
                     UserImage()
-                    
                     TabView(selectedItem: $selectedItem, yOffset: $yOffset)
-                    
+                    DividerView()
                 }
                 Spacer()
             }
@@ -125,8 +124,7 @@ struct TabView: View {
     }
 }
 
-
-struct MyDividerView: View {
+struct DividerView: View {
     var body: some View {
         VStack {
             Rectangle()
