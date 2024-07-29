@@ -70,15 +70,70 @@ struct TabView: View {
     var body: some View {
         ZStack(alignment: .leading) {
             Rectangle()
-                .frame(
-                    width: isAnimated ? 20 : 230, height: 45)
+                .frame(width: isAnimated ? 20 : 230, height: 45)
                 .foregroundStyle(.BG)
-                .cornerRadius(5)
+                .cornerRadius(10)
                 .offset(y: yOffset)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 5)
+                .offset(y: -125)
+                .offset(x: -20)
+                .animation(.default, value: isAnimated)
             
-            VStack {
-                
+            VStack(spacing: 0) {
+                ForEach(sideBar) { item in
+                    Button(action: {
+                        withAnimation {
+                            isAnimated = true
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                            withAnimation {
+                                selectedItem = item.tab
+                                yOffset = CGFloat(item.index) * 70
+                            }
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            withAnimation {
+                                isAnimated = false
+                            }
+                        }
+                    }, label: {
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(.ultraThinMaterial)
+                                
+                                Image(systemName: item.icon)
+                                    .foregroundStyle(.white)
+                            }
+                            
+                            Text(item.title)
+                                .bold()
+                                .font(.title3)
+                                .foregroundStyle(.white)
+                                .padding(.leading, 10)
+                            
+                            Spacer()
+                        }
+                        .padding(.top, 30)
+                    })
+                }
             }
+            .frame(width: 240, height: 330)
         }
     }
 }
+
+
+struct MyDividerView: View {
+    var body: some View {
+        VStack {
+            Rectangle()
+                .frame(width: 266, height: 1)
+                .foregroundStyle(.gray.opacity(0.4))
+                .padding(.top, 30)
+        }
+    }
+}
+
