@@ -11,23 +11,28 @@ import SwiftUI
 
 struct TabViewView: View {
     @State var selectedIndex = 0
-    let timer = Timer.publish(every: 22, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
     var body: some View {
         TabView(selection: $selectedIndex) {
             ImageView(image: "")
                 .tag(1)
             ImageView(image: "")
-                .tag(1)
+                .tag(2)
             ImageView(image: "")
-                .tag(1)
+                .tag(3)
             ImageView(image: "")
-                .tag(1)
+                .tag(4)
             ImageView(image: "")
-                .tag(1)
-            ImageView(image: "")
-                .tag(1)            
+                .tag(5)
         }
+        .tabViewStyle(PageTabViewStyle())
+        .frame(width: 266, height: 175)
+        .onReceive(timer, perform: { time in
+            withAnimation {
+                selectedIndex = selectedIndex == 5 ? 0 : selectedIndex + 1
+            }
+        })
     }
 }
 

@@ -16,14 +16,15 @@ struct ContentView: View {
     var body: some View {
         ZStack {
          Color("BG1")
-                .frame(width: 265)
+                .frame(width: 266)
                 .mask(RoundedRectangle(cornerRadius: 15, style: .continuous))
             
             VStack {
                 VStack {
                     UserImage()
-                    TabView(selectedItem: $selectedItem, yOffset: $yOffset)
+                    TabView1(selectedItem: $selectedItem, yOffset: $yOffset)
                     DividerView()
+                    TabViewView()
                 }
                 Spacer()
             }
@@ -61,7 +62,7 @@ struct UserImage: View {
     }
 }
 
-struct TabView: View {
+struct TabView1: View {
     @Binding var selectedItem: TabIcon
     @Binding var yOffset: CGFloat
     @State var isAnimated: Bool = false
