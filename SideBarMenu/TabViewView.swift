@@ -15,19 +15,21 @@ struct TabViewView: View {
     
     var body: some View {
         TabView(selection: $selectedIndex) {
-            ImageView(image: "")
+            ImageView(image: "SB1")
                 .tag(1)
-            ImageView(image: "")
+            ImageView(image: "SB2")
                 .tag(2)
-            ImageView(image: "")
+            ImageView(image: "SB1")
                 .tag(3)
-            ImageView(image: "")
+            ImageView(image: "SB2")
                 .tag(4)
-            ImageView(image: "")
+            ImageView(image: "SB1")
                 .tag(5)
         }
         .tabViewStyle(PageTabViewStyle())
-        .frame(width: 266, height: 175)
+        .offset(x: -10)
+        .frame(width: 266, height: 170)
+        .padding(.top, 10)
         .onReceive(timer, perform: { time in
             withAnimation {
                 selectedIndex = selectedIndex == 5 ? 0 : selectedIndex + 1
@@ -47,9 +49,9 @@ struct ImageView: View {
         Image(image)
             .resizable()
             .scaledToFill()
-            .frame(width: 230, height: 160)
+            .frame(width: 250, height: 170)
             .clipped()
-            .cornerRadius(10)
+            .cornerRadius(30)
             .padding(.leading, 15)
     }
 }
