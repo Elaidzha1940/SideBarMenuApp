@@ -20,13 +20,24 @@ struct ContentView: View {
                 .mask(RoundedRectangle(cornerRadius: 15, style: .continuous))
             
             VStack {
-                VStack {
+                VStack(alignment: .leading) {
                     UserImage()
                     TabView1(selectedItem: $selectedItem, yOffset: $yOffset)
-                    DividerView()
-                    TabViewView()
+                 
                 }
+                .padding(.leading, 15)
+                
                 Spacer()
+                
+                DividerView()
+                TabViewView()
+                HStack {
+                    Text("Learn more about the App")
+                        .padding(.leading)
+                    Image(systemName: "questionmark.circle")
+                }
+                .foregroundStyle(.white)
+                .padding(.top, 5)
             }
         }
         .ignoresSafeArea()
