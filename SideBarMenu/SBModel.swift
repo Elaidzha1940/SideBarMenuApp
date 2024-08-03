@@ -23,7 +23,7 @@ let sideBar = [
     SideBar(icon: "house.fill", title: "Favorite", tab: .Home, index: 0),
     SideBar(icon: "house.fill", title: "Purchase", tab: .Home, index: 0),
     SideBar(icon: "house.fill", title: "Notification", tab: .Home, index: 0),
-
+    
 ]
 
 enum TabIcon: String {
