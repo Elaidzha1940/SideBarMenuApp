@@ -85,11 +85,32 @@ struct TabView1: View {
                 .foregroundStyle(.BG)
                 .cornerRadius(10)
                 .offset(y: yOffset)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 5)
-                .offset(y: -125)
-                .offset(x: -20)
-                .animation(.default, value: isAnimated)
+//                .padding(.vertical, 8)
+//                .padding(.horizontal, 5)
+//                .offset(y: -125)
+//                .offset(x: -20)
+//                .animation(.default, value: isAnimated)
+            VStack {
+                ForEach(sideBar) { item in
+                    Button(action: {
+                        //
+                    }, label: {
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(.ultraThinMaterial)
+                                Image(systemName: item.icon)
+                            }
+                            Text(item.title)
+                                .bold()
+                                .font(.title3)
+                                .foregroundStyle(.white)
+                                .padding(.leading, 10)
+                        }
+                })
+                }
+            }
             
             VStack(spacing: 0) {
                 ForEach(sideBar) { item in
