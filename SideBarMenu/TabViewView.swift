@@ -49,7 +49,7 @@ struct ImageView: View {
         Image(image)
             .resizable()
             .scaledToFill()
-            .frame(width: 250, height: 170)
+            .frame(width: 230, height: 157)
             .clipped()
             .cornerRadius(30)
             .padding(.leading, 15)
