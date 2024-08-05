@@ -10,8 +10,8 @@
 import SwiftUI
 
 struct SideBarMenuView: View {
-    @State var selectedItem: TabIcon = .Card
-    @State var yOffset: CGFloat = 0
+    @State private var selectedItem: TabIcon = .Home
+    @State private var yOffset: CGFloat = 0.0
     
     var body: some View {
         ZStack {
@@ -27,14 +27,14 @@ struct SideBarMenuView: View {
                 }
                 .padding(.leading, 15)
                 
-//                Spacer()
+                Spacer()
                 
                 DividerView()
                 TabViewView()
                 HStack {
                     Text("Learn more about the App")
                         .padding(.leading)
-                    Image(systemName: "questionmark.circle")
+                    Image(systemName: "camera.metering.unknown")
                 }
                 .foregroundStyle(.white)
                 .padding(.top, 5)
@@ -45,12 +45,12 @@ struct SideBarMenuView: View {
                     Dicon(icon: "moon.zzz.fill")
                     Spacer()
                     
-                    Text("Watching")
-                        .foregroundStyle(.white)
+                    Text("Settings")
+                        .foregroundStyle(.white.opacity(0.8))
+                        .font(.system(size: 18, weight: .medium, design: .rounded))
                     Spacer()
                     
                     Dicon(icon: "gearshape.fill")
-                    
                 }
                 .padding(.bottom, 20)
                 .frame(width: 230, height: 90)
@@ -70,9 +70,14 @@ struct SideBarMenuView: View {
 struct UserImage: View {
     var body: some View {
         HStack {
-            Circle()
-                .frame(width: 65, height: 65)
-                .foregroundStyle(.white)
+            ZStack {
+                Circle()
+                    .foregroundStyle(.white)
+                Image(systemName: "movieclapper")
+                    .frame(width: 60, height: 60)
+                    .font(.system(size: 30, weight: .heavy, design: .rounded))
+                    .foregroundStyle(.BG_1)
+            }
             
             VStack(alignment: .leading, spacing: 5) {
                 RoundedRectangle(cornerRadius: 3, style: .continuous)
@@ -127,17 +132,18 @@ struct TabView1: View {
                         HStack {
                             ZStack {
                                 Circle()
-                                    .frame(width: 39 , height: 40)
+                                    .frame(width: 40 , height: 40)
                                     .foregroundStyle(.ultraThinMaterial)
                                 
                                 Image(systemName: item.icon)
+                                    .font(.system(size: 18, weight: .bold, design: .rounded))
                                     .foregroundStyle(.white)
                             }
                             
                             Text(item.title)
                                 .bold()
-                                .font(.title3)
-                                .foregroundStyle(.white)
+                                .font(.system(size: 20, weight: .medium, design: .rounded))
+                                .foregroundStyle(.white.opacity(0.8))
                                 .padding(.leading, 10)
                             
                             Spacer()
@@ -168,11 +174,12 @@ struct Dicon: View {
     var body: some View {
         ZStack {
             Circle()
-                .frame(width: 48, height: 48)
+                .frame(width: 45, height: 45)
                 .foregroundStyle(.ultraThinMaterial)
             
             Image(systemName: icon)
-                .foregroundStyle(.white)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+                .foregroundStyle(.white.opacity(0.8))
         }
     }
 }

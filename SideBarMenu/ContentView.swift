@@ -20,7 +20,12 @@ struct ContentView: View {
                     open = true
                 }
             }, label: {
-                Text("Open")
+                HStack {
+                    Text("Open")
+                    Image(systemName: "movieclapper")
+                }
+                .font(.system(size: 20, weight: .heavy, design: .rounded))
+                .foregroundStyle(.BG_1)
             })
             
             SideBarMenuView()
@@ -35,6 +40,7 @@ struct ContentView: View {
                         })
                 )
         }
+        .background(Color.black.opacity(0.2))
     }
 }
 

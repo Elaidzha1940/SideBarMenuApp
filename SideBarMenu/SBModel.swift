@@ -18,12 +18,11 @@ struct SideBar: Identifiable {
 }
 
 let sideBar = [
-    SideBar(icon: "house.fill", title: "Home", tab: .Home, index: 0),
-    SideBar(icon: "house.fill", title: "Card", tab: .Home, index: 0),
-    SideBar(icon: "house.fill", title: "Favorite", tab: .Home, index: 0),
-    SideBar(icon: "house.fill", title: "Purchase", tab: .Home, index: 0),
-    SideBar(icon: "house.fill", title: "Notification", tab: .Home, index: 0),
-    
+    SideBar(icon: "film", title: "Film", tab: .Home, index: 0),
+    SideBar(icon: "list.and.film", title: "Favorite", tab: .Card, index: 1),
+    SideBar(icon: "film.stack.fill", title: "Watching", tab: .Favorite, index: 2),
+    SideBar(icon: "airplayvideo", title: "Liked", tab: .Purchase, index: 3),
+    SideBar(icon: "bell.fill", title: "Notification", tab: .Notification, index: 4),
 ]
 
 enum TabIcon: String {
