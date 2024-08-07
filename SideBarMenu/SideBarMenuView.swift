@@ -16,8 +16,8 @@ struct SideBarMenuView: View {
     var body: some View {
         ZStack {
             Color("BG1")
-                .frame(width: 266)
-                .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .frame(width: 267)
+                .mask(RoundedRectangle(cornerRadius: 17, style: .continuous))
             
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
@@ -72,7 +72,9 @@ struct UserImage: View {
         HStack {
             ZStack {
                 Circle()
+                    .frame(width: 80, height: 80)
                     .foregroundStyle(.white)
+                
                 Image(systemName: "movieclapper")
                     .frame(width: 60, height: 60)
                     .font(.system(size: 30, weight: .heavy, design: .rounded))
@@ -80,13 +82,13 @@ struct UserImage: View {
             }
             
             VStack(alignment: .leading, spacing: 5) {
-                RoundedRectangle(cornerRadius: 3, style: .continuous)
-                    .frame(width: 100, height: 14)
-                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .frame(width: 110, height: 14)
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
                     .frame(width: 75, height: 7)
                     .opacity(0.5)
-                RoundedRectangle(cornerRadius: 3, style: .continuous)
-                    .frame(width: 52, height: 7)
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .frame(width: 50, height: 7)
                     .opacity(0.5)
             }
         }

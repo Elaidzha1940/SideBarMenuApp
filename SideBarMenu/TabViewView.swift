@@ -11,7 +11,7 @@ import SwiftUI
 
 struct TabViewView: View {
     @State var selectedIndex = 0
-    let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     
     var body: some View {
         TabView(selection: $selectedIndex) {
